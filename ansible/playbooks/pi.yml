@@ -2,8 +2,8 @@
 # - name: Run common
 #   import_playbook: common.yml
 
-- name: Deploy Desktop with Ansible
-  hosts: desktop
+- name: Deploy pi with Ansible
+  hosts: pi
   become: yes
 
   # vars:
@@ -22,7 +22,7 @@
     #- cloud-sql-proxy
     #- plank
     # - grzegorznowak.nvm_node
-    - andrewrothstein.terraform
+    #- andrewrothstein.terraform
     #- suzuki-shunsuke.git-lfs-ubuntu
     #- gnagano.ansible_gitflow
     # - ngetchell.vscode
@@ -40,13 +40,13 @@
     # - ibmcloud
     # - azurecli
 
-  # tasks:
-  #   - name : list users to apply oh-my-zsh
-  #     shell: "getent passwd {1000..1010} | awk -F: '$3 {print $1}'"
-  #     register: users
+  tasks:
+    - name : list users to apply oh-my-zsh
+      shell: "getent passwd {1000..1010} | awk -F: '$3 {print $1}'"
+      register: users
 
-  #   - name: Reload Font cache
-  #     shell: fc-cache -fv
+    - name: Reload Font cache
+      shell: fc-cache -fv
 
   #   - name: Config git user
   #     shell: git config --global color.ui true && git config --global user.email "{{ item }}@{{ ansible_fqdn }}" && git config --global user.name "{{ item }}"

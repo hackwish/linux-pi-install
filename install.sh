@@ -37,7 +37,7 @@ fi
 
 
 echo "Actualizando el sistema..."
-apt-get update && apt-get -y --force-yes upgrade && apt-get -y --force-yes dist-upgrade
+apt-get update && apt-get -y --allow upgrade && apt-get -y --allow dist-upgrade
 
 echo "Instalando dependencias previas"
 apt-get install -y curl \
@@ -74,14 +74,14 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y -o Dpkg::Options::="--force-co
 
 echo "CodeName AHORA: $DISTRIB_CODENAME"
 
-# #Ansible
-# echo "Iniciando Ansible Deploy"
-# ANSIBLE_CUSTOM_DIR=`pwd`
+#Ansible
+echo "Iniciando Ansible Deploy"
+ANSIBLE_CUSTOM_DIR=`pwd`
 
-# echo "Descargando requirements"
-# ansible-galaxy install --force -r ${ANSIBLE_CUSTOM_DIR}/ansible/requirements.yml
+echo "Descargando requirements"
+ansible-galaxy install --force -r ${ANSIBLE_CUSTOM_DIR}/ansible/requirements.yml
 
-# echo "Comienza Deployment con Ansible"
-# ansible-playbook -vv -i ${ANSIBLE_CUSTOM_DIR}/ansible/hosts ${ANSIBLE_CUSTOM_DIR}/ansible/playbooks/desktop.yml
+echo "Comienza Deployment con Ansible"
+ansible-playbook -vv -i ${ANSIBLE_CUSTOM_DIR}/ansible/hosts ${ANSIBLE_CUSTOM_DIR}/ansible/playbooks/pi.yml
 
-# echo "TODO LISTO!!"
+echo "TODO LISTO!!"
