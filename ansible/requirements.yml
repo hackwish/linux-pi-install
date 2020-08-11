@@ -1,7 +1,7 @@
 ---
 
-# - name: common-desktop
-#   src: https://github.com/hackwish/ansible-common-desktop.git
+- name: //github.com/hackwish/ansible-common-pi.git
+  src: https://github.com/hackwish/ansible-common-pi.git
   # version: ubuntu-2004
 
 - name: ohmyzsh

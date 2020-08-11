@@ -13,9 +13,9 @@
   #   terraform_ver: "0.12.20"
 
   roles:
-    #- common-desktop
     - ohmyzsh
     - cloudalchemy.node-exporter
+    - common-pi
     #- bihealth.python3
     #- andrewrothstein.vagrant
     #- azure-data-studio
@@ -55,5 +55,5 @@
   #   - name: Add Vagrant plugins
   #     shell: vagrant plugin install vagrant-mutate vagrant-libvirt vagrant-vbguest vagrant-puppet-install vocker  vagrant-lxc vagrant-list vagrant-hosts vagrant-hostmanager vagrant-exec vagrant-camera vagrant-cachier sahara vagrant-scp
 
-  #   - name: Fix Docker execution without sudo #Issue #7
-  #     shell: "users=$( getent passwd {1000..1010} | awk -F: '$3 {print $1}' );for user in $users; do sudo usermod -a -G docker $user; done"
+    - name: Fix Docker execution without sudo #Issue #7
+      shell: "users=$( getent passwd {1000..1010} | awk -F: '$3 {print $1}' );for user in $users; do sudo usermod -a -G docker $user; done"
