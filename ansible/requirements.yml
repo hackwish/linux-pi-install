@@ -1,6 +1,5 @@
 ---
-
-- name: //github.com/hackwish/ansible-common-pi.git
+- name: common-pi
   src: https://github.com/hackwish/ansible-common-pi.git
   # version: ubuntu-2004
 
