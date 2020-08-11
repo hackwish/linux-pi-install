@@ -28,8 +28,8 @@
 # - name: plank
 #   src: https://github.com/hackwish/ansible-plank.git
 
-- name: andrewrothstein.terraform
-  src: andrewrothstein.terraform
+# - name: andrewrothstein.terraform
+#   src: andrewrothstein.terraform
 
 # - name: docker
 #   src: https://github.com/hackwish/ansible-docker.git

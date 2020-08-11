@@ -45,8 +45,8 @@
       shell: "getent passwd {1000..1010} | awk -F: '$3 {print $1}'"
       register: users
 
-    - name: Reload Font cache
-      shell: fc-cache -fv
+    # - name: Reload Font cache
+    #   shell: fc-cache -fv
 
   #   - name: Config git user
   #     shell: git config --global color.ui true && git config --global user.email "{{ item }}@{{ ansible_fqdn }}" && git config --global user.name "{{ item }}"
