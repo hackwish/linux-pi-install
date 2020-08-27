@@ -17,6 +17,8 @@
     - cloudalchemy.node-exporter
     - cloudalchemy.blackbox-exporter
     - cloudalchemy.prometheus
+    - cloudalchemy.alertmanager
+    #- cloudalchemy.grafana
     - common-pi
     #- bihealth.python3
     #- andrewrothstein.vagrant
