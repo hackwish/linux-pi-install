@@ -12,13 +12,21 @@
   #   nvm_install_globally: ['peerflix']
   #   terraform_ver: "0.12.20"
 
+  vars:
+    prometheus_targets:
+      node:
+      - targets:
+        - localhost:9100
+        labels:
+          env: localhost
+
   roles:
     - ohmyzsh
     - cloudalchemy.node-exporter
     - cloudalchemy.blackbox-exporter
     - cloudalchemy.prometheus
-    - cloudalchemy.alertmanager
-    #- cloudalchemy.grafana
+    # - cloudalchemy.alertmanager
+    # - cloudalchemy.grafana
     - common-pi
     #- bihealth.python3
     #- andrewrothstein.vagrant
