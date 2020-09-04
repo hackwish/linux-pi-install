@@ -9,8 +9,8 @@
 - name: cloudalchemy.node-exporter
   src: cloudalchemy.node-exporter
 
-- name: cloudalchemy.blackbox-exporter
-  src: cloudalchemy.blackbox-exporter
+# - name: cloudalchemy.blackbox-exporter
+#   src: cloudalchemy.blackbox-exporter
 
 - name: cloudalchemy.prometheus
   src: cloudalchemy.prometheus
