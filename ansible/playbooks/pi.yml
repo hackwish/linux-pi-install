@@ -27,22 +27,12 @@
     - cloudalchemy.prometheus
     # - cloudalchemy.alertmanager
     # - cloudalchemy.grafana
-    # - common-pi
+    - common-pi
 
   tasks:
     - name : list users to apply oh-my-zsh
       shell: "getent passwd {1000..1010} | awk -F: '$3 {print $1}'"
       register: users
-
-    # - name: Reload Font cache
-    #   shell: fc-cache -fv
-
-  #   - name: Config git user
-  #     shell: git config --global color.ui true && git config --global user.email "{{ item }}@{{ ansible_fqdn }}" && git config --global user.name "{{ item }}"
-  #     with_items: "{{ users.stdout_lines }}"
-
-  #   - name: Add Vagrant plugins
-  #     shell: vagrant plugin install vagrant-mutate vagrant-libvirt vagrant-vbguest vagrant-puppet-install vocker  vagrant-lxc vagrant-list vagrant-hosts vagrant-hostmanager vagrant-exec vagrant-camera vagrant-cachier sahara vagrant-scp
 
     - name: Fix Docker execution without sudo #Issue #7
       shell: "users=$( getent passwd {1000..1010} | awk -F: '$3 {print $1}' );for user in $users; do sudo usermod -a -G docker $user; done"
