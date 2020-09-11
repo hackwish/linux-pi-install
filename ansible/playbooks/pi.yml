@@ -6,13 +6,12 @@
   hosts: pi
   become: yes
 
-  # vars:
-  #   nvm_install_script_version: "0.33.11"
-  #   nvm_node_version: "4.1.1"
-  #   nvm_install_globally: ['peerflix']
-  #   terraform_ver: "0.12.20"
-
   vars:
+  #Static IP
+    custom_ip: "192.168.0.56"
+    custom_gateway_ip: "192.168.0.1"
+    custom_dns_server: "8.8.8.8,1.1.1.1,208.67.222.222"
+  # Prometheus
     prometheus_targets:
       node:
       - targets:
@@ -28,6 +27,7 @@
     # - cloudalchemy.alertmanager
     # - cloudalchemy.grafana
     - common-pi
+    - static-ip
 
   tasks:
     - name : list users to apply oh-my-zsh

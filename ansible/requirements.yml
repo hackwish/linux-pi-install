@@ -6,6 +6,9 @@
 - name: ohmyzsh
   src: https://github.com/hackwish/ansible-ohmyzsh.git
 
+- name: static-ip
+  src: https://github.com/hackwish/ansible-static-ip.git
+
 - name: cloudalchemy.node-exporter
   src: cloudalchemy.node-exporter
 
