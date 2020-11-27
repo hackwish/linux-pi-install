@@ -27,6 +27,7 @@
     # - cloudalchemy.alertmanager
     # - cloudalchemy.grafana
     - common-pi
+    - docker
     # - static-ip
 
   tasks:

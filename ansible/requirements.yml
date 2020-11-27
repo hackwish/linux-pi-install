@@ -12,6 +12,9 @@
 - name: cloudalchemy.node-exporter
   src: cloudalchemy.node-exporter
 
+- name: docker
+  src: https://github.com/hackwish/ansible-docker.git
+  
 # - name: cloudalchemy.blackbox-exporter
 #   src: cloudalchemy.blackbox-exporter
 
@@ -41,9 +44,6 @@
 
 # - name: andrewrothstein.terraform
 #   src: andrewrothstein.terraform
-
-# - name: docker
-#   src: https://github.com/hackwish/ansible-docker.git
 
 # - name: rke
 #   src: https://github.com/hackwish/ansible-rke.git
