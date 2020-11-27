@@ -8,26 +8,26 @@
 
   vars:
   #Static IP
-    custom_ip: "192.168.0.56"
-    custom_gateway_ip: "192.168.0.1"
-    custom_dns_server: "8.8.8.8,1.1.1.1,208.67.222.222"
+    # custom_ip: "192.168.0.50"
+    # custom_gateway_ip: "192.168.0.1"
+    # custom_dns_server: "8.8.8.8,1.1.1.1,208.67.222.222"
   # Prometheus
-    prometheus_targets:
-      node:
-      - targets:
-        - localhost:9100
-        labels:
-          env: localhost
+    # prometheus_targets:
+    #   node:
+    #   - targets:
+    #     - localhost:9100
+    #     labels:
+    #       env: localhost
 
   roles:
     - ohmyzsh
     - cloudalchemy.node-exporter
     # - cloudalchemy.blackbox-exporter
-    - cloudalchemy.prometheus
+    # - cloudalchemy.prometheus
     # - cloudalchemy.alertmanager
     # - cloudalchemy.grafana
     - common-pi
-    - static-ip
+    # - static-ip
 
   tasks:
     - name : list users to apply oh-my-zsh
