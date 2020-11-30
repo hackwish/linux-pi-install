@@ -12,14 +12,26 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'virtualbox'
 VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vagrant.plugins = [
+    "sahara",
+    "vagrant-cachier",
+    "vagrant-exec",
+    "vagrant-hostmanager",
+    "vagrant-hosts",
+    "vagrant-hosts",
+    "vagrant-list",
+    "vagrant-mutate",
+    "vagrant-scp",
+    "vagrant-vbguest",
+    "vocker",
+  ]
   config.vm.box = "ubuntu/focal64"
   config.vm.box_url = "ubuntu/focal64"
   config.ssh.insert_key = false
-  config.vbguest.auto_update = false
+  # config.vbguest.auto_update = false
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.auto_detect = true
   end
-
 
   config.vm.provider :virtualbox do |v|
     # v.gui = true
@@ -30,7 +42,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 
   #ANSIBLE
-  config.vm.define "desktop" do |master|
+  config.vm.define "bydefault" do |master|
     master.vm.hostname = "desktop01.bydefault-cl.test"
     master.vm.network :private_network, ip: "172.16.240.10"
     master.vm.network :forwarded_port, guest: 22, host: 2401, id: "ssh"
